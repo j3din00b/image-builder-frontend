@@ -50,6 +50,7 @@ export const OSBUILD_SERVICE_ARCHITECTURE_URL =
 
 export const RHEL_8 = 'rhel-8';
 export const RHEL_9 = 'rhel-9';
+export const RHEL_9_BETA = 'rhel-9-beta';
 export const CENTOS_9 = 'centos-9';
 export const X86_64 = 'x86_64';
 export const AARCH64 = 'aarch64';
@@ -80,6 +81,7 @@ export const UNIT_GIB = 1024 ** 3;
 export const RELEASES = new Map([
   [RHEL_9, 'Red Hat Enterprise Linux (RHEL) 9'],
   [RHEL_8, 'Red Hat Enterprise Linux (RHEL) 8'],
+  [RHEL_9_BETA, 'Red Hat Enterprise Linux (RHEL) 9 Beta'],
   [CENTOS_9, 'CentOS Stream 9'],
 ]);
 
@@ -220,8 +222,10 @@ export const EPEL_9_REPO_DEFINITION = {
 
 export const DEBOUNCED_SEARCH_WAIT_TIME = 500;
 export const UNIQUE_VALIDATION_DELAY = 300;
-export const FIRST_BOOT_SERVICE_DATA =
-  'W1VuaXRdCkRlc2NyaXB0aW9uPVJ1biBmaXJzdCBib290IHNjcmlwdApDb25kaXRpb25QYXRoRXhpc3RzPS91c3IvbG9jYWwvc2Jpbi9jdXN0b20tZmlyc3QtYm9vdApXYW50cz1uZXR3b3JrLW9ubGluZS50YXJnZXQKQWZ0ZXI9bmV0d29yay1vbmxpbmUudGFyZ2V0CkFmdGVyPW9zYnVpbGQtZmlyc3QtYm9vdC5zZXJ2aWNlCgpbU2VydmljZV0KVHlwZT1vbmVzaG90CkV4ZWNTdGFydD0vdXNyL2xvY2FsL3NiaW4vY3VzdG9tLWZpcnN0LWJvb3QKRXhlY1N0YXJ0UG9zdD1tdiAvdXNyL2xvY2FsL3NiaW4vY3VzdG9tLWZpcnN0LWJvb3QgL3Vzci9sb2NhbC9zYmluL2N1c3RvbS1maXJzdC1ib290LmRvbmUKCltJbnN0YWxsXQpXYW50ZWRCeT1tdWx0aS11c2VyLnRhcmdldAo=';
+
+// Use `make` to generate the following line.
+// prettier-ignore
+export const FIRST_BOOT_SERVICE_DATA = 'W1VuaXRdCkRlc2NyaXB0aW9uPUN1c3RvbSBmaXJzdCBib290IHNjcmlwdApDb25kaXRpb25GaWxlSXNFeGVjdXRhYmxlPS91c3IvbG9jYWwvc2Jpbi9jdXN0b20tZmlyc3QtYm9vdApDb25kaXRpb25GaXJzdEJvb3Q9eWVzCgpXYW50cz1maXJzdC1ib290LWNvbXBsZXRlLnRhcmdldApXYW50cz1uZXR3b3JrLW9ubGluZS50YXJnZXQKV2FudHM9b3NidWlsZC1maXJzdC1ib290LnRhcmdldApCZWZvcmU9Zmlyc3QtYm9vdC1jb21wbGV0ZS50YXJnZXQKQWZ0ZXI9bmV0d29yay1vbmxpbmUudGFyZ2V0CkFmdGVyPW9zYnVpbGQtZmlyc3QtYm9vdC5zZXJ2aWNlCgpbU2VydmljZV0KVHlwZT1vbmVzaG90CkV4ZWNTdGFydD0vdXNyL2xvY2FsL3NiaW4vY3VzdG9tLWZpcnN0LWJvb3QKUmVtYWluQWZ0ZXJFeGl0PXllcwoKW0luc3RhbGxdCldhbnRlZEJ5PWJhc2ljLnRhcmdldApXYW50ZWRCeT1tdWx0aS11c2VyLnRhcmdldApXYW50ZWRCeT1ncmFwaGljYWwudGFyZ2V0Cg==';
 
 export const FIRST_BOOT_SERVICE = 'custom-first-boot';
 
