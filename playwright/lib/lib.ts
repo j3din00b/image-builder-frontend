@@ -1,4 +1,4 @@
-import { type Page, type FrameLocator } from '@playwright/test';
+import { type Page, type FrameLocator, expect } from '@playwright/test';
 
 export const ibFrame = (page: Page): FrameLocator | Page => {
   if (isHosted()) {
@@ -9,13 +9,28 @@ export const ibFrame = (page: Page): FrameLocator | Page => {
     .contentFrame();
 };
 
+export const togglePreview = async (page: Page) => {
+  const toggleSwitch = page.locator('#preview-toggle');
+
+  if (!(await toggleSwitch.isChecked())) {
+    await toggleSwitch.click();
+  }
+
+  const turnOnButton = page.getByRole('button', { name: 'Turn on' });
+  if (await turnOnButton.isVisible()) {
+    await turnOnButton.click();
+  }
+
+  await expect(toggleSwitch).toBeChecked();
+};
+
 export const login = async (page: Page) => {
-  if (!process.env.USER || !process.env.PASSWORD) {
+  if (!process.env.PLAYWRIGHT_USER || !process.env.PLAYWRIGHT_PASSWORD) {
     throw new Error('user or password not set in environment');
   }
 
-  const user = process.env.USER;
-  const password = process.env.PASSWORD;
+  const user = process.env.PLAYWRIGHT_USER;
+  const password = process.env.PLAYWRIGHT_PASSWORD;
 
   if (isHosted()) {
     return loginConsole(page, user, password);
@@ -49,7 +64,7 @@ const loginConsole = async (page: Page, user: string, password: string) => {
   await page.getByRole('textbox', { name: 'Password' }).fill(password);
   await page.getByRole('button', { name: 'Log in' }).click();
   await closePopupsIfExist(page);
-  await page.locator('#preview-toggle').check();
+  await togglePreview(page);
   await page.getByRole('heading', { name: 'All images' });
 };
 
