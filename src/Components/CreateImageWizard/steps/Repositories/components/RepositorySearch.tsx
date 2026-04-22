@@ -158,6 +158,7 @@ const RepositorySearch = ({
           isExpanded={isOpen}
           icon={<SearchIcon />}
           aria-label='Filter repositories'
+          placeholder='Search and add repositories'
         />
         <TextInputGroupUtilities>
           <Button

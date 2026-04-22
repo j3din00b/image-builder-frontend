@@ -393,7 +393,7 @@ const Repositories = () => {
           reposToRemove={reposToRemove}
           setReposToRemove={setReposToRemove}
         />
-        <FormGroup label='Repositories'>
+        <FormGroup label='Add repositories'>
           <Toolbar>
             <ToolbarContent>
               <ToolbarItem>
