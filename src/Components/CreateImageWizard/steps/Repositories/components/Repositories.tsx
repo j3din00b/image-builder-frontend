@@ -397,7 +397,7 @@ const Repositories = () => {
         <FormGroup label='Add repositories'>
           <Toolbar>
             <ToolbarContent>
-              <ToolbarItem>
+              <ToolbarItem style={{ width: '50%' }}>
                 <RepositorySearch
                   onSelectRepository={(repo) => addSelected(repo)}
                   onRemoveRepository={(repo) => removeSelected(repo)}
